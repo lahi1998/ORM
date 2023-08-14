@@ -1030,11 +1030,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kmg513\\Desktop\\skole\\ORM\\ORM\\ORM.csproj",
+      "projectUniqueName": "C:\\Users\\kmg513\\Desktop\\sidsteuge\\findBand\\ORM\\ORDDATA\\ORMData\\ORM\\ORM.csproj",
       "projectName": "ORM",
-      "projectPath": "C:\\Users\\kmg513\\Desktop\\skole\\ORM\\ORM\\ORM.csproj",
+      "projectPath": "C:\\Users\\kmg513\\Desktop\\sidsteuge\\findBand\\ORM\\ORDDATA\\ORMData\\ORM\\ORM.csproj",
       "packagesPath": "C:\\Users\\kmg513\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kmg513\\Desktop\\skole\\ORM\\ORM\\obj\\",
+      "outputPath": "C:\\Users\\kmg513\\Desktop\\sidsteuge\\findBand\\ORM\\ORDDATA\\ORMData\\ORM\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
