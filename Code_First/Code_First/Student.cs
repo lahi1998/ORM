@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -12,10 +14,10 @@ namespace Code_First
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        private int StudentID { get; set; }
-        private int AverageMark { get; set; }
+        public int StudentID { get; set; }
+        public int AverageMark { get; set; }
 
-        public void CreateClass(DBConnector context)
+        public void CreateStudent(DBConnector context)
         {
             bool integer = false;
             int averagemark = 0;
@@ -64,12 +66,12 @@ namespace Code_First
             {
                 Console.WriteLine(ex.ToString());
             }
-            Console.WriteLine("Class created.");
+            Console.WriteLine("Student created.");
         }
 
-        public void UpdateWorker(DBConnector context)
+        public void UpdateStuden(DBConnector context)
         {
-            Console.Write("Enter Professor ID to update: ");
+            Console.Write("Enter student ID to update: ");
             string? input = Console.ReadLine();
             int id = int.Parse(input);
 
@@ -89,17 +91,17 @@ namespace Code_First
 
 
                 context.SaveChanges();
-                Console.WriteLine("professors updated.");
+                Console.WriteLine("Student updated.");
             }
             else
             {
-                Console.WriteLine("professors not found.");
+                Console.WriteLine("Student not found.");
             }
         }
 
-        public void DeleteWorker(DBConnector context)
+        public void DeleteStudent(DBConnector context)
         {
-            Console.Write("Enter Professor ID to delete: ");
+            Console.Write("Enter student ID to delete: ");
             string? input = Console.ReadLine();
             int id = int.Parse(input);
 
@@ -109,11 +111,11 @@ namespace Code_First
             {
                 context.Students.Remove(student);
                 context.SaveChanges();
-                Console.WriteLine("Worker deleted.");
+                Console.WriteLine("Student deleted.");
             }
             else
             {
-                Console.WriteLine("Worker not found.");
+                Console.WriteLine("Student not found.");
             }
         }
     }

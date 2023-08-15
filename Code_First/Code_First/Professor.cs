@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Threading;
@@ -17,7 +19,7 @@ namespace Code_First
         public int ProfessorID { get; set; }
         public int Salery { get; set; }
 
-        public void CreateClass(DBConnector context)
+        public void CreateProfessor(DBConnector context)
         {
             bool integer = false;
             int salery = 0;
@@ -69,9 +71,9 @@ namespace Code_First
             Console.WriteLine("Professor created.");
         }
 
-        public void UpdateWorker(DBConnector context)
+        public void UpdateProfessor(DBConnector context)
         {
-            Console.Write("Enter Professor ID to update: ");
+            Console.Write("Enter professor ID to update: ");
             string input = Console.ReadLine();
             int id = int.Parse(input);
 
@@ -91,17 +93,17 @@ namespace Code_First
 
 
                 context.SaveChanges();
-                Console.WriteLine("professors updated.");
+                Console.WriteLine("Professor updated.");
             }
             else
             {
-                Console.WriteLine("professors not found.");
+                Console.WriteLine("Professor not found.");
             }
         }
 
-        public void DeleteWorker(DBConnector context)
+        public void DeleteProfessor(DBConnector context)
         {
-            Console.Write("Enter Professor ID to delete: ");
+            Console.Write("Enter professor ID to delete: ");
             string input = Console.ReadLine();
             int id = int.Parse(input);
 
@@ -111,11 +113,11 @@ namespace Code_First
             {
                 context.Professors.Remove(Professor);
                 context.SaveChanges();
-                Console.WriteLine("Worker deleted.");
+                Console.WriteLine("Professor deleted.");
             }
             else
             {
-                Console.WriteLine("Worker not found.");
+                Console.WriteLine("Professor not found.");
             }
         }
     }
