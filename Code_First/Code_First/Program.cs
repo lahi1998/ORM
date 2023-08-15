@@ -2,6 +2,7 @@
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using System.Collections.Generic;
 
+
 namespace Code_First
 {
     class Program
