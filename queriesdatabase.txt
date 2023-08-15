@@ -1,0 +1,67 @@
+
+Queries - databased 
+
+klasser: Country, City, Address, Person, Student, Professor, Class, Grade
+
+Student og Professor arver fra Person
+
+
+Grade er interface
+
+
+   CREATE TABLE Country (
+    CountryID INT PRIMARY KEY,
+    CountryName VARCHAR(255)
+);
+
+CREATE TABLE City (
+    CityID INT PRIMARY KEY,
+    CityName VARCHAR(255),
+    PostalCode INT,
+    CountryID INT,
+    FOREIGN KEY (CountryID) REFERENCES Country(CountryID)
+);
+
+CREATE TABLE Address (
+    AddressID INT PRIMARY KEY AUTO_INCREMENT,
+    Street VARCHAR(255),
+    CityID INT,
+    FOREIGN KEY (CityID) REFERENCES City(CityID)
+);
+
+CREATE TABLE Person (
+    PersonID INT PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(255),
+    PhoneNumber VARCHAR(15),
+    EmailAddress VARCHAR(255),
+    AddressID INT,
+    FOREIGN KEY (AddressID) REFERENCES Address(AddressID)
+);
+
+CREATE TABLE Student (
+    PersonID INT PRIMARY KEY,
+    StudentNumber VARCHAR(255),
+    AverageMark INT,
+    FOREIGN KEY (PersonID) REFERENCES Person(PersonID)
+);
+
+CREATE TABLE Professor (
+    PersonID INT PRIMARY KEY,
+    FOREIGN KEY (PersonID) REFERENCES Person(PersonID)
+);
+
+CREATE TABLE Class (
+    ClassID INT PRIMARY KEY,
+    ClassName VARCHAR(255),
+    ProfessorID INT,
+    FOREIGN KEY (ProfessorID) REFERENCES Professor(PersonID)
+);
+
+CREATE TABLE Grade (
+    GradeID INT PRIMARY KEY AUTO_INCREMENT,
+    GradeValue INT,
+    StudentID INT,
+    ProfessorID INT,
+    FOREIGN KEY (StudentID) REFERENCES Student(PersonID),
+    FOREIGN KEY (ProfessorID) REFERENCES Professor(PersonID)
+);
