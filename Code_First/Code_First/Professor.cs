@@ -11,7 +11,6 @@ using System.Xml.Linq;
 namespace Code_First
 {
 
-
     public class Professor : Person
     {
         [Key]
