@@ -41,23 +41,11 @@ namespace Code_First
             Console.Write("Enter street: ");
             string? street = Console.ReadLine();
 
-            {
-                Console.Write("Enter postal code: ");
-                string? input = Console.ReadLine();
-                // verify that the input is a int
-                try
-                {
-                    postalcode = int.Parse(input);
-                    integer = true;
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Invalid input. Please enter a valid integer.");
-                    Thread.Sleep(1500);
-                    Console.Clear();
-                }
+            Console.Write("Enter postal code: ");
+            postalcode = Convert.ToInt32(Console.ReadLine());
 
-            } while (integer == false) ;
+
+
 
 
             var address = new Address

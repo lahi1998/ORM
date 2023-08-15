@@ -22,24 +22,8 @@ namespace Code_First
             bool integer = false;
             int averagemark = 0;
 
-            {
-
-                Console.Write("Enter Average Mark: ");
-                string? input = Console.ReadLine();
-                // verify that the input is a int
-                try
-                {
-                    averagemark = int.Parse(input);
-                    integer = true;
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Invalid input. Please enter a valid integer.");
-                    Thread.Sleep(1500);
-                    Console.Clear();
-                }
-
-            } while (integer == false) ;
+            Console.Write("Enter Average Mark: ");
+            averagemark = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Enter Name");
             string? name = Console.ReadLine();
