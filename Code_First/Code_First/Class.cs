@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 
-
 namespace Code_First
 {
     public class Class : IClass
