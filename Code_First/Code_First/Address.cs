@@ -17,7 +17,6 @@ namespace Code_First
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int AddressID { get; set; }
 
-
         public int CountryID { get; set; }
         public string CountryName { get; set; }
 
