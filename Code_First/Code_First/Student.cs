@@ -73,7 +73,6 @@ namespace Code_First
                 string? num = Console.ReadLine();
                 student.AverageMark = int.Parse(num);
 
-
                 context.SaveChanges();
                 Console.WriteLine("Student updated.");
             }
